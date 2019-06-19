@@ -1,0 +1,15 @@
+<script>
+    document.addEventListener('DOMSubtreeModified', function(e) {
+        if (e.target.tagName == 'HTML') {
+            if (e.target.className.match('translated')) {
+                dataLayer.push({
+                    'event': 'UAevent',
+                    'eventCategory': 'Behaviour',
+                    'eventAction': 'Googletranslate',
+                    'eventLabel': null,
+                    'eventValue': null
+                });
+            }
+        }
+    }, true);
+</script>
