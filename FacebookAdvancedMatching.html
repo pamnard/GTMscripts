@@ -1,0 +1,52 @@
+<!-- Facebook Pixel Code -->
+<script>
+    var initObj = {};
+    var external_id = '{{external_id}}'; // ID пользователя
+    var ct = '{{ct}}'; // Город	Название города в нижнем регистре без пробелов
+    var country = '{{country}}'; // Страна Двухбуквенный код страны в формате ISO 3166-1 alpha-2
+    var db = '{{db}}'; // Дата рождения	Год, месяц и число рождения (например, 19971226означает 26 декабря 1997 г.)
+    var em = '{{em}}'; // Электронный адрес	Адрес электронной почты в нижнем регистре
+    var fn = '{{fn}}'; // Имя в нижнем регистре
+    var ge = '{{ge}}'; // Пол f (женский) или m (мужской). Если пол неизвестен, оставьте значение параметра пустым
+    var ln = '{{ln}}'; // Фамилия в нижнем регистре
+    var ph = '{{ph}}'; // Телефон Код страны, код города и номер телефона (только цифры)
+    var st = '{{st}}'; // Штат, провинция или область Двухбуквенный код штата
+    var zp = '{{zp}}'; // Почтовый индекс из пяти цифр
+    if (external_id != 'undefined') {
+        initObj.external_id = external_id;
+    }
+    if (ct != 'undefined') {
+        initObj.ct = ct;
+    }
+    if (country != 'undefined') {
+        initObj.country = country;
+    }
+    if (db != 'undefined') {
+        initObj.db = db;
+    }
+    if (em != 'undefined') {
+        initObj.em = em;
+    }
+    if (fn != 'undefined') {
+        initObj.fn = fn;
+    }
+    if (ge != 'undefined') {
+        initObj.ge = ge;
+    }
+    if (ln != 'undefined') {
+        initObj.ln = ln;
+    }
+    if (ph != 'undefined') {
+        initObj.ph = ph;
+    }
+    if (st != 'undefined') {
+        initObj.st = st;
+    }
+    if (zp != 'undefined') {
+        initObj.zp = zp;
+    }
+    // Standert Pixel Code 
+    fbq('init', '1234567890', initObj);
+    // Other paremeters
+</script>
+<!-- End Facebook Pixel Code -->
