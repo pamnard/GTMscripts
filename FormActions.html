@@ -1,0 +1,38 @@
+<script>
+    (function() {
+        var formSelector = 'form#Id'; // Form selector
+        var history = [];
+        var i;
+        var checkSubmit = function() {
+            i = window.dataLayer.length - 1;
+            while (i > -1) {
+                if (window.dataLayer[i]['event'] === 'gtm.formSubmit') {
+                    return true;
+                }
+                i--;
+            }
+        };
+        window.addEventListener('beforeunload', function() {
+            if (history.length && !checkSubmit()) {
+                window.dataLayer.push({
+                    'event': 'UAevent',
+                    'eventCategory': 'Behaviour',
+                    'eventAction': 'Form Actions',
+                    'eventLabel': history.join(' > ')
+                });
+                if (history.length < 5) {
+                    tagRecording(history.join('_'));
+                }
+            }
+        });
+        document.querySelector(formSelector).addEventListener('change', function(e) {
+            var stage = e['target'].getAttribute(attribute).replace('Id', '');
+            if (history.length == +0) {
+                history.push(stage);
+            }
+            if ((history[history.length - +1] != stage) && (history.length > +0)) {
+                history.push(stage);
+            }
+        });
+    })();
+</script>
